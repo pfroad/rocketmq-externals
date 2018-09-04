@@ -76,5 +76,6 @@ var en = {
     "CLUSTER_NAME":"clusterName",
     "OPS":"OPS",
     "AUTO_REFRESH":"AUTO_REFRESH",
-    "REFRESH":"REFRESH"
+    "REFRESH":"REFRESH",
+    "LOGOUT":"Logout"
 }

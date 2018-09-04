@@ -14,20 +14,11 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.apache.rocketmq.console;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import tk.mybatis.spring.annotation.MapperScan;
+package org.apache.rocketmq.console.mapper;
 
-@EnableAutoConfiguration
-@SpringBootApplication
-@MapperScan(basePackages = "org.apache.rocketmq.console.**.mapper")
-public class App {
+import org.apache.rocketmq.console.model.User;
+import tk.mybatis.mapper.common.Mapper;
 
-    public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
-    }
-
+public interface UserMapper extends Mapper<User> {
 }

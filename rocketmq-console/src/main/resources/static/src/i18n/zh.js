@@ -76,5 +76,6 @@ var zh = {
     "CLUSTER_NAME":"集群名",
     "OPS":"运维",
     "AUTO_REFRESH":"自动刷新",
-    "REFRESH":"刷新"
+    "REFRESH":"刷新",
+    "LOGOUT":"注销"
 }

@@ -1,0 +1,50 @@
+server:
+  contextPath:
+  port: 8080
+#spring.application.index=true
+spring:
+  application.name: rocketmq-console
+  http.encoding:
+    charset: UTF-8
+    enabled: true
+    force: true
+
+logging.config: classpath:logback.xml
+#if this value is empty,use env value rocketmq.config.namesrvAddr  NAMESRV_ADDR | now, you can set it in ops page.default localhost:9876
+rocketmq.config:
+  namesrvAddr:
+  isVIPChannel: false #if you use rocketmq version < 3.5.8, rocketmq.config.isVIPChannel should be false.default true
+  dataPath: /tmp/rocketmq-console/data #rocketmq-console's data path:dashboard/monitor
+  enableDashBoardCollect: true #set it false if you don't want use dashboard.default true
+
+rmq.console.datasource:
+  url: jdbc:mysql://10.35.22.61:3306/grafana?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+  username: apuser
+  password: airparking
+  driver-class-name: com.mysql.jdbc.Driver
+  maxPoolSize: 5
+  minIdle: 1
+  idleTimeout: 60000
+  connectTimeout: 30000
+  readOnly: true
+
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+    - tk.mybatis.mapper.common.Mapper2
+  notEmpty: true
+  identity: MYSQL
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+---
+
+spring:
+  profiles: test
+rmq.console.datasource:
+  url: jdbc:mysql://rdsc589fmpeqm0c4d895.mysql.rds.aliyuncs.com:3306/grafana?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+  username: apdev
+  password: airparking
