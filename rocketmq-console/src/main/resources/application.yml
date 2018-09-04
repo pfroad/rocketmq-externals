@@ -45,6 +45,6 @@ pagehelper:
 spring:
   profiles: test
 rmq.console.datasource:
-  url: jdbc:mysql://rdsc589fmpeqm0c4d895.mysql.rds.aliyuncs.com:3306/grafana?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
-  username: apdev
-  password: airparking
+  url: jdbc:mysql://test:3306/grafana?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+  username: test
+  password: 123456
