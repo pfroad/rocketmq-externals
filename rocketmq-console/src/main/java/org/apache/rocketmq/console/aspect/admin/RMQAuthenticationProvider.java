@@ -80,7 +80,7 @@ public class RMQAuthenticationProvider implements AuthenticationProvider {
         User loadedUser;
 
         final Example example = new Example(User.class);
-        example.createCriteria().andEqualTo("login", username).orEqualTo("email", username);
+        example.createCriteria().andEqualTo("admin", true).andEqualTo("login", username).orEqualTo("email", username);
         try {
             loadedUser = this.userMapper.selectOneByExample(example);
         } catch (Exception repositoryProblem) {

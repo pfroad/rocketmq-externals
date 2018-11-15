@@ -48,3 +48,12 @@ rmq.console.datasource:
   url: jdbc:mysql://test:3306/grafana?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
   username: test
   password: 123456
+
+---
+
+spring:
+  profiles: prod
+rmq.console.datasource:
+  url: jdbc:mysql://172.18.1.144:3306/grafana?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+  username: grafuser
+  password: ${DB_PASSWORD}
